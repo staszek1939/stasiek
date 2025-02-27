@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usługi - Serwis Komputerowy Stasiek</title>
+    <style>
+        :root {
+            --primary-color: #2a5298;
+            --secondary-color: #f0f0f0;
+            --accent-color: #ff6b00;
+            --text-color: #333;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styling */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Page header */
+        .page-header {
+            background-color: var(--secondary-color);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        /* Services detailed */
+        .services-detailed {
+            padding: 80px 0;
+        }
+        
+        .service-item {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+        
+        .service-item:nth-child(even) {
+            grid-template-columns: 2fr 1fr;
+        }
+        
+        .service-item:nth-child(even) .service-image {
+            order: 2;
+        }
+        
+        .service-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-details h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-details ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .service-details ul li {
+            margin-bottom: 10px;
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        /* CTA section */
+        .cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e05a00;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .service-item,
+            .service-item:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-item:nth-child(even) .service-image {
+                order: 0;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Serwis Stasiek</div>
+                <ul>
+                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="uslugi.html">Usługi</a></li>
+                    <li><a href="cennik.html">Cennik</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nasze Usługi</h1>
+            <p>Zapewniamy kompleksową obsługę w zakresie naprawy, konserwacji i modernizacji sprzętu komputerowego.</p>
+        </div>
+    </section>
+
+    <!-- Services Detailed -->
+    <section class="services-detailed">
+        <div class="container">
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="/api/placeholder/500/300" alt="Naprawa komputerów">
+                </div>
+                <div class="service-details">
+                    <h2>Naprawa komputerów stacjonarnych</h2>
+                    <p>Diagnozujemy i naprawiamy wszelkie awarie sprzętowe i programowe w komputerach stacjonarnych różnych producentów. Nasi doświadczeni technicy szybko zidentyfikują problem i dobiorą najlepsze rozwiązanie.</p>
+                    <ul>
+                        <li>Wymiana uszkodzonych podzespołów (płyty główne, procesory, karty graficzne)</li>
+                        <li>Naprawa zasilaczy i systemów chłodzenia</li>
+                        <li>Instalacja i konfiguracja systemów operacyjnych</li>
+                        <li>Usuwanie błędów BIOS i innych problemów systemowych</li>
+                        <li>Czyszczenie i konserwacja</li>
+                    </ul>
+                    <p class="price-tag">Od 50 zł</p>
+                </div>
+            </div>
+            
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="/api/placeholder/500/300" alt="Naprawa laptopów">
+                </div>
+                <div class="service-details">
+                    <h2>Naprawa laptopów</h2>
+                    <p>Specjalizujemy się w naprawie laptopów wszystkich marek, oferując profesjonalne usługi zarówno w przypadku uszkodzeń mechanicznych, jak i problemów z oprogramowaniem.</p>
+                    <ul>
+                        <li>Wymiana matryc, klawiatur, gniazd zasilania</li>
+                        <li>Naprawa uszkodzonych zawiasów i obudów</li>
+                        <li>Rozwiązywanie problemów z przegrzewaniem (czyszczenie, wymiana past termoprzewodzących)</li>
+                        <li>Wymiana dysków twardych i pamięci RAM</li>
+                        <li>Naprawa płyt głównych (wymiana układów BGA)</li>
+                    </ul>
+                    <p class="price-tag">Od 80 zł</p>
+                </div>
+            </div>
+            
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="/api/placeholder/500/300" alt="Usuwanie wirusów">
+                </div>
+                <div class="service-details">
+                    <h2>Usuwanie wirusów i zabezpieczanie systemów</h2>
+                    <p>Skutecznie usuwamy złośliwe oprogramowanie i zabezpieczamy system przed przyszłymi zagrożeniami. Oferujemy kompleksowe rozwiązania w zakresie bezpieczeństwa danych.</p>
+                    <ul>
+                        <li>Usuwanie wirusów, trojanów, ransomware i innego złośliwego oprogramowania</li>
+                        <li>Instalacja i konfiguracja oprogramowania antywirusowego</li>
+                        <li>Konfiguracja zapory sieciowej i innych zabezpieczeń</li>
+                        <li>Odzyskiwanie zaszyfrowanych danych (jeśli to możliwe)</li>
+                        <li>Szkolenie z zakresu bezpiecznego korzystania z internetu</li>
+                    </ul>
+                    <p class="price-tag">Od 100 zł</p>
+                </div>
+            </div>
+            
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="/api/placeholder/500/300" alt="Modernizacja sprzętu">
+                </div>
+                <div class="service-details">
+                    <h2>Modernizacja sprzętu</h2>
+                    <p>Zwiększamy wydajność Twojego komputera poprzez wymianę podzespołów na nowsze i szybsze. Doradzamy, jakie komponenty warto wymienić, aby uzyskać najlepszy stosunek ceny do wydajności.</p>
+                    <ul>
+                        <li>Wymiana procesora, płyty głównej i pamięci RAM</li>
+                        <li>Upgrade karty graficznej</li>
+                        <li>Instalacja szybkich dysków SSD</li>
+                        <li>Poprawa wydajności chłodzenia (montaż wydajniejszych układów chłodzenia)</li>
+                        <li>Optymalizacja systemu pod kątem wydajności</li>
+                    </ul>
+                    <p class="price-tag">Od 70 zł + cena części</p>
+                </div>
+            </div>
+            
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="/api/placeholder/500/300" alt="Odzyskiwanie danych">
+                </div>
+                <div class="service-details">
+                    <h2>Odzyskiwanie danych</h2>
+                    <p>Przywracamy dostęp do utraconych danych z uszkodzonych dysków twardych, pamięci flash i innych nośników. Używamy profesjonalnych narzędzi do odzyskiwania danych.</p>
+                    <ul>
+                        <li>Odzyskiwanie danych z uszkodzonych dysków twardych (HDD i SSD)</li>
+                        <li>Odzyskiwanie przypadkowo usuniętych plików</li>
+                        <li>Odzyskiwanie danych z kart pamięci i pendrive'ów</li>
+                        <li>Odzyskiwanie danych po formatowaniu</li>
+                        <li>Tworzenie systemów kopii zapasowych, aby zapobiec przyszłej utracie danych</li>
+                    </ul>
+                    <p class="price-tag">Od 150 zł</p>
+                </div>
+            </div>
+            
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="/api/placeholder/500/300" alt="Konfiguracja sieci">
+                </div>
+                <div class="service-details">
+                    <h2>Konfiguracja sieci</h2>
+                    <p>Instalujemy i konfigurujemy sieci domowe i firmowe, zapewniając bezpieczne i stabilne połączenie. Oferujemy rozwiązania dopasowane do indywidualnych potrzeb.</p>
+                    <ul>
+                        <li>Instalacja i konfiguracja routerów oraz switchy</li>
+                        <li>Konfiguracja sieci Wi-Fi z odpowiednimi zabezpieczeniami</li>
+                        <li>Tworzenie sieci VPN</li>
+                        <li>Konfiguracja serwerów domowych i firmowych</li>
+                        <li>Rozwiązywanie problemów z połączeniem internetowym</li>
+                    </ul>
