@@ -28,7 +28,7 @@ section {
     margin: 20px auto;
     width: 80%;
     max-width: 1000px;
-    background-color: #ffffff; /* Białe tło sekcji */
+    background-color: #D3D3D3; /* Białe tło sekcji */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Delikatny cień */
     border-radius: 10px; /* Zaokrąglone rogi */
 }
